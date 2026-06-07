@@ -28,7 +28,8 @@ Interaction videos play once:
   `c-talk.mp4`, `c-happy.mp4`, `c-confused.mp4`, `c-advise.mp4`,
   `c-clap.mp4`, and `c-congrats.mp4`
 - Vivian: `v-talk.mp4`, `v-think.mp4`, and `v-congrats.mp4`
-- Estelle: `e-results-1.mp4`, `e-results-2.mp4`, and `e-congrats.mp4`
+- Estelle: `e-talk.mp4`, `e-results-1.mp4`, `e-results-2.mp4`, and
+  `e-congrats.mp4`
 
 The runtime flow is idle video loop, interaction video once, then idle video
 loop. The PNG images are fallback-only if a video fails or is missing. New
@@ -46,6 +47,8 @@ The Vivian idle filename is `v-idle.mp4`. Do not use the old
 - Miss Ciel owns module practice, tutoring, and mastery checks.
 - Miss Estelle owns routing, results, summaries, placement, and
   recommendations.
+  General spoken dialogue uses `e-talk.mp4`, while result presentation keeps
+  priority and uses the `e-results` videos.
 
 Ciel is the most dynamic agent. Ciel talk is used while tutor dialogue TTS is
 actively speaking. Ciel confused is used for learner-facing
