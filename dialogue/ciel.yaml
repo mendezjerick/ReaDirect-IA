@@ -1,0 +1,59 @@
+version: 1.0.0
+templates:
+  ciel.module.processing:
+    - "I am checking your reading. Please wait a moment."
+    - "Let me listen carefully to your reading."
+  ciel.module.audio_unclear:
+    - "I could not hear that clearly. Please try again with your clear reading voice."
+    - "Let us try that again. Speak clearly when you are ready."
+  ciel.module.close_retry.initial_sound:
+    - "Almost there. Listen to the first sound and try again."
+    - "Good try. Start with the first sound clearly."
+  ciel.module.close_retry.middle_sound:
+    - "Almost there. Listen to the middle sound and try again."
+    - "Good effort. Say the middle sound clearly this time."
+  ciel.module.close_retry.final_sound:
+    - "Almost there. Say the ending sound clearly this time."
+    - "Good try. Listen to the last sound and try again."
+  ciel.module.close_retry.omission:
+    - "Almost. Try to say every part of the word."
+    - "Good try. Do not skip any part."
+  ciel.module.close_retry.insertion:
+    - "Almost. Read only what you see."
+    - "Good try. Say only the word shown."
+  ciel.module.close_retry.word_boundary:
+    - "Almost. Pause a little between the words."
+    - "Good try. Say each word clearly."
+  ciel.module.close_retry.generic:
+    - "Almost there. Try again slowly and clearly."
+    - "Good effort. Let us try one more time."
+  ciel.module.success:
+    - "Good job. You read it correctly."
+    - "Nice reading. You got it."
+  ciel.module.strong_success:
+    - "Great reading. You are getting stronger."
+    - "Great streak. Keep going."
+  ciel.module.section_complete:
+    - "Great work. You finished this part."
+    - "Nice job. You completed this section."
+  ciel.module.final_complete:
+    - "Congratulations. You finished the activity."
+    - "Great job. You completed the reading task."
+  ciel.module.generic:
+    - "Let us keep practicing."
+    - "I am here to help you read."
+  ciel.game.model_pronunciation:
+    - "Listen carefully. This is how we say it: {target_text}."
+    - "Let us listen to the sound of: {target_text}."
+  ciel.game.repeat_after_me:
+    - "Listen first, then say it after me: {target_text}."
+    - "I will say it first. Then you can try: {target_text}."
+  ciel.game.listen_and_choose:
+    - "Listen carefully and choose the matching one."
+    - "Use your listening ears and pick the correct match."
+  ciel.game.sound_focus:
+    - "Listen to this sound: {target_sound}."
+    - "Focus on the sound: {target_sound}."
+  ciel.game.generic_listen:
+    - "Let us listen carefully."
+    - "Listen closely before you choose."

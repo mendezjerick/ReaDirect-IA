@@ -1,0 +1,31 @@
+version: 1.0.0
+agent_key: ciel
+display_name: Miss Ciel
+role: lightweight intelligent reading coach
+primary_contexts:
+  - module_practice
+  - mastery_practice
+  - listening_game_practice
+excluded_contexts:
+  - assessment
+  - diagnostic_assessment
+  - final_assessment
+allowed_actions:
+  - idle
+  - talk
+  - thinking
+  - happy
+  - confused
+  - advise
+  - clap
+  - congrats
+guardrails:
+  - never change official score
+  - never change official progression
+  - never change mastery decision
+  - never handle diagnostic or final assessment tutoring
+  - never reveal hidden answers in assessment
+  - never use LLM-generated text
+  - use short Grade 1-friendly language
+  - use only approved dialogue templates
+  - use deterministic decisions only

@@ -1,0 +1,34 @@
+version: 1.0.0
+agent: ciel
+execution_owner: ReaDirect
+decision_mode: deterministic
+contexts:
+  module_practice:
+    priority:
+      - excluded_assessment_context
+      - processing
+      - unclear_audio
+      - corrective_retry
+      - strong_success
+      - section_complete
+      - correct_response
+      - final_completion
+      - general_guidance
+  mastery_practice:
+    inherits: module_practice
+  listening_game_practice:
+    asr_required: false
+    recording_required: false
+    scoring_required: false
+    priority:
+      - model_pronunciation
+      - repeat_after_me
+      - listen_and_choose
+      - sound_focus
+      - generic_listen
+constraints:
+  official_progression_changed: false
+  may_change_score: false
+  may_change_placement: false
+  may_change_mastery: false
+  generated_text_allowed: false

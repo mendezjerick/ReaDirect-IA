@@ -1,0 +1,44 @@
+[
+  {
+    "name": "unclear module audio",
+    "event": {
+      "source_type": "module",
+      "context": "module_practice",
+      "retry_required": true,
+      "error_type": "unclear_audio"
+    },
+    "expected": {
+      "action": "confused",
+      "dialogue_key": "ciel.module.audio_unclear"
+    }
+  },
+  {
+    "name": "final sound correction",
+    "event": {
+      "source_type": "module",
+      "context": "module_practice",
+      "is_correct": false,
+      "remaining_attempts": 1,
+      "error_type": "final_sound_error"
+    },
+    "expected": {
+      "action": "advise",
+      "dialogue_key": "ciel.module.close_retry.final_sound"
+    }
+  },
+  {
+    "name": "future game pronunciation model",
+    "event": {
+      "source_type": "readirect_game",
+      "context": "listening_game_practice",
+      "activity_type": "listen_word",
+      "target_text": "cat",
+      "instruction_mode": "model_pronunciation"
+    },
+    "expected": {
+      "action": "talk",
+      "dialogue_key": "ciel.game.model_pronunciation",
+      "message": "Listen carefully. This is how we say it: cat."
+    }
+  }
+]

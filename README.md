@@ -3,6 +3,28 @@
 ReaDirect-IA means ReaDirect Intelligent Agent. This repository stores the
 visual assets for Miss Ciel, Miss Vivian, and Miss Estelle.
 
+It also stores Miss Ciel's lightweight deterministic agent specifications.
+Laravel executes the runtime decisions; ReaDirect-IA does not run as a
+microservice.
+
+## Miss Ciel Intelligent Coach Specifications
+
+- `definitions/ciel.yaml` defines Ciel's role, contexts, actions, and
+  guardrails.
+- `policies/ciel-coach.yaml` documents deterministic module and future
+  listening-game priorities.
+- `dialogue/ciel.yaml` contains approved Grade 1-friendly messages.
+- `schemas/` contains the Ciel event and decision contracts.
+- `scenarios/ciel-coaching.json` contains reusable policy fixtures.
+- `manifests/media.json` maps Ciel's exact existing media files.
+
+The future `ReaDirect-Game` contract is listening-based. It supports Ciel
+modeling letters, sounds, and words without learner recording, ASR,
+transcripts, or scoring. The game repository and UI are not implemented here.
+
+Miss Ciel uses deterministic approved dialogue and has no runtime LLM
+dependency.
+
 ## Asset Directories
 
 - `assets/images` contains static agent images.

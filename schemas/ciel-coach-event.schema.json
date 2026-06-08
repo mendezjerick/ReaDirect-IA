@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readirect.local/schemas/ciel-coach-event.schema.json",
+  "title": "Ciel Coach Event",
+  "type": "object",
+  "required": ["source_type", "context"],
+  "properties": {
+    "source_type": { "enum": ["module", "readirect_game"] },
+    "context": {
+      "enum": [
+        "module_practice",
+        "mastery_practice",
+        "listening_game_practice",
+        "assessment",
+        "diagnostic_assessment",
+        "final_assessment"
+      ]
+    },
+    "activity_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "read_letter",
+        "read_word",
+        "read_sentence",
+        "read_passage",
+        "listen_letter",
+        "listen_sound",
+        "listen_word",
+        null
+      ]
+    },
+    "target_text": { "type": ["string", "null"] },
+    "target_sound": { "type": ["string", "null"] },
+    "instruction_mode": {
+      "type": ["string", "null"],
+      "enum": [
+        "coach_feedback",
+        "model_pronunciation",
+        "repeat_after_me",
+        "listen_and_choose",
+        "sound_focus",
+        "processing",
+        "checking",
+        "uploading",
+        null
+      ]
+    },
+    "learner_id": { "type": ["integer", "null"], "minimum": 1 },
+    "attempt_number": { "type": ["integer", "null"], "minimum": 0 },
+    "remaining_attempts": { "type": ["integer", "null"], "minimum": 0 },
+    "is_correct": { "type": ["boolean", "null"] },
+    "transcript": { "type": ["string", "null"] },
+    "error_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "unclear_audio",
+        "vowel_confusion",
+        "initial_sound_error",
+        "middle_sound_error",
+        "final_sound_error",
+        "omission",
+        "insertion",
+        "substitution",
+        "word_boundary_error",
+        "unknown",
+        null
+      ]
+    },
+    "similarity_label": {
+      "type": ["string", "null"],
+      "enum": ["exact", "very_close", "close", "far", "unclear", null]
+    },
+    "asr_confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "uncertain": { "type": ["boolean", "null"] },
+    "retry_required": { "type": ["boolean", "null"] },
+    "correct_streak": { "type": ["integer", "null"], "minimum": 0 },
+    "incorrect_streak": { "type": ["integer", "null"], "minimum": 0 },
+    "weak_skill": { "type": ["string", "null"] },
+    "skill_signal": { "type": ["string", "null"] },
+    "section_completed": { "type": ["boolean", "null"] },
+    "final_completion": { "type": ["boolean", "null"] },
+    "congrats_allowed": { "type": "boolean", "default": false }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "context": { "const": "listening_game_practice" }
+        }
+      },
+      "then": {
+        "properties": {
+          "source_type": { "const": "readirect_game" }
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

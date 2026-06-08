@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "agent": "ciel",
+  "fallback_image": "assets/images/Ciel/Ciel.png",
+  "idle": "assets/videos/Ciel/c-idle.mp4",
+  "actions": {
+    "talk": ["assets/videos/Ciel/c-talk.mp4"],
+    "thinking": [
+      "assets/videos/Ciel/c-thinking-1.mp4",
+      "assets/videos/Ciel/c-thinking-2.mp4",
+      "assets/videos/Ciel/c-thinking-3.mp4"
+    ],
+    "happy": ["assets/videos/Ciel/c-happy.mp4"],
+    "confused": ["assets/videos/Ciel/c-confused.mp4"],
+    "advise": ["assets/videos/Ciel/c-advise.mp4"],
+    "clap": ["assets/videos/Ciel/c-clap.mp4"],
+    "congrats": ["assets/videos/Ciel/c-congrats.mp4"]
+  }
+}

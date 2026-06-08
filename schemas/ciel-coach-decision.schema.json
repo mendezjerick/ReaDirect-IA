@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readirect.local/schemas/ciel-coach-decision.schema.json",
+  "title": "Ciel Coach Decision",
+  "type": "object",
+  "required": [
+    "agent",
+    "action",
+    "dialogue_key",
+    "message",
+    "reason_codes",
+    "context",
+    "source_type",
+    "tts_voice",
+    "should_request_tts",
+    "official_progression_changed"
+  ],
+  "properties": {
+    "agent": { "const": "ciel" },
+    "action": {
+      "enum": ["idle", "talk", "thinking", "happy", "confused", "advise", "clap", "congrats"]
+    },
+    "dialogue_key": { "type": "string", "pattern": "^ciel\\." },
+    "message": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "reason_codes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "context": {
+      "enum": ["module_practice", "mastery_practice", "listening_game_practice"]
+    },
+    "source_type": { "enum": ["module", "readirect_game"] },
+    "tts_voice": { "const": "miss_ciel" },
+    "should_request_tts": { "const": true },
+    "official_progression_changed": { "const": false }
+  },
+  "additionalProperties": false
+}
