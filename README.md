@@ -3,9 +3,41 @@
 ReaDirect-IA means ReaDirect Intelligent Agent. This repository stores the
 visual assets for Miss Ciel, Miss Vivian, and Miss Estelle.
 
-It also stores Miss Ciel's lightweight deterministic agent specifications.
-Laravel executes the runtime decisions; ReaDirect-IA does not run as a
-microservice.
+It also runs Miss Ciel's lightweight deterministic tutor agent. The FastAPI
+service in `main.py` owns Ciel's coaching decision loop; Laravel remains the
+authority for scoring, mastery, placement, and progression.
+
+## Ciel Tutor Agent Runtime
+
+The engine is under `ciel_agent/`:
+
+- `engine.py` implements perceive, decide, act, and memory update.
+- `rules.py` classifies attempt and error context.
+- `templates.py` contains deterministic Grade 1-friendly messages.
+- `memory.py` stores learner/session error counts in local JSON.
+- `schemas.py` validates inputs, modes, and exact animation labels.
+
+No LLM, OpenAI, Ollama, or random response generation is used.
+
+Start the service:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m uvicorn main:app --host 127.0.0.1 --port 8003
+```
+
+Endpoints:
+
+- `GET /health`
+- `GET /ia/ciel/status`
+- `POST /ia/ciel/decide`
+
+Run tests and examples:
+
+```powershell
+python -m unittest discover -s tests -v
+python scripts/example_decisions.py
+```
 
 ## Miss Ciel Intelligent Coach Specifications
 
@@ -35,6 +67,10 @@ dependency.
 ReaDirect-IA remains the source of truth for all agent media. ReaDirect does
 not commit copies of these files. Development and production environments
 expose `assets` through a static URL such as `/ia-assets`.
+
+ReaDirect-IA is also the source of truth for Ciel tutoring decisions.
+Laravel sends already-scored attempt evidence to the service and attaches the
+returned `ciel_agent` payload. The agent cannot alter official scoring.
 
 ## Phase 5 Media
 

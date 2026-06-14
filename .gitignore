@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+data/ciel_memory.json
+data/ciel_memory.json.tmp

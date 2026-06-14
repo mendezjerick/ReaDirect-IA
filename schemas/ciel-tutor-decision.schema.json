@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readirect.local/schemas/ciel-tutor-decision.schema.json",
+  "title": "Ciel Tutor Agent Decision",
+  "type": "object",
+  "required": [
+    "agent",
+    "mode",
+    "animation",
+    "emotion",
+    "message",
+    "next_action",
+    "focus_mode",
+    "memory_update",
+    "official_progression_changed"
+  ],
+  "properties": {
+    "agent": { "const": "ciel" },
+    "mode": {
+      "enum": [
+        "idle",
+        "instruction",
+        "listening",
+        "checking",
+        "correct_praise",
+        "soft_retry",
+        "hint",
+        "focus_teach",
+        "slow_practice",
+        "final_encouragement",
+        "final_assessment_completion"
+      ]
+    },
+    "animation": {
+      "enum": [
+        "c-advise",
+        "c-clap",
+        "c-confused",
+        "c-congrats",
+        "c-happy",
+        "c-idle",
+        "c-talk",
+        "c-thinking-1",
+        "c-thinking-2",
+        "c-thinking-3"
+      ]
+    },
+    "emotion": { "type": "string" },
+    "message": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "display_target": { "type": "string" },
+    "next_action": { "type": "string" },
+    "lock_interaction": { "type": "boolean" },
+    "repeat_after_agent": { "type": "boolean" },
+    "teaching_focus": { "type": ["string", "null"] },
+    "focus_mode": { "type": "object" },
+    "memory_update": { "type": "object" },
+    "official_progression_changed": { "const": false }
+  },
+  "additionalProperties": true
+}

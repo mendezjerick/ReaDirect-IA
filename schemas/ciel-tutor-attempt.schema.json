@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://readirect.local/schemas/ciel-tutor-attempt.schema.json",
+  "title": "Ciel Tutor Attempt Context",
+  "type": "object",
+  "required": [
+    "learner_id",
+    "session_id",
+    "module_type",
+    "expected",
+    "transcript",
+    "is_correct",
+    "attempt"
+  ],
+  "properties": {
+    "learner_id": { "type": ["integer", "string"] },
+    "session_id": { "type": "string", "minLength": 1 },
+    "module_type": { "type": "string" },
+    "expected": { "type": "string" },
+    "transcript": { "type": "string" },
+    "is_correct": { "type": "boolean" },
+    "attempt": { "type": "integer", "minimum": 1 },
+    "asr_confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+    "gop_score": { "type": ["number", "null"] },
+    "phoneme_errors": { "type": "array" },
+    "error_type": { "type": ["string", "null"] },
+    "target_phoneme": { "type": ["string", "null"] },
+    "activity_id": { "type": ["integer", "string", "null"] },
+    "is_final_assessment_completion": { "type": "boolean" },
+    "audio_duration_seconds": { "type": ["number", "null"], "minimum": 0 },
+    "audio_too_short": { "type": "boolean" },
+    "retry_required": { "type": "boolean" },
+    "uncertain": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}
