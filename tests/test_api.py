@@ -66,6 +66,33 @@ class CielAgentApiTest(unittest.TestCase):
         self.assertEqual("c-advise", decision["animation"])
         self.assertFalse(decision["official_progression_changed"])
 
+    def test_decide_accepts_future_automatic_mode_context_without_behavior_change(self):
+        response = self.client.post(
+            "/ia/ciel/decide",
+            json={
+                "learner_id": 1,
+                "session_id": "api-unit-test",
+                "module_type": "letter_reading",
+                "expected": "B",
+                "transcript": "D",
+                "is_correct": False,
+                "attempt": 2,
+                "asr_confidence": 0.72,
+                "error_type": "letter_confusion",
+                "listening_mode": "automatic_ciel",
+                "session_mode": "automatic_ciel",
+                "automatic_session_id": "session-123",
+                "current_agent_state": "listening",
+                "silence_timeout": 1.2,
+                "chunk_id": "chunk-001",
+            },
+        )
+        self.assertEqual(200, response.status_code)
+        decision = response.json()["ciel_agent"]
+        self.assertEqual("focus_teach", decision["mode"])
+        self.assertEqual("c-advise", decision["animation"])
+        self.assertFalse(decision["official_progression_changed"])
+
 
 if __name__ == "__main__":
     unittest.main()

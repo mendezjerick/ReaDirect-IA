@@ -81,6 +81,12 @@ class AttemptContext(BaseModel):
     audio_too_short: bool = False
     retry_required: bool = False
     uncertain: bool = False
+    listening_mode: str | None = None
+    session_mode: str | None = None
+    automatic_session_id: str | None = None
+    current_agent_state: str | None = None
+    silence_timeout: float | None = Field(default=None, ge=0.0)
+    chunk_id: str | None = None
 
 
 class FocusMode(BaseModel):
