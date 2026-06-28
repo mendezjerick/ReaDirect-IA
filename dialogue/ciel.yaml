@@ -1,59 +1,59 @@
 version: 1.0.0
 templates:
   ciel.module.processing:
-    - "I am checking your reading. Please wait a moment."
-    - "Let me listen carefully to your reading."
+    - "I am checking your reading now. Please wait a moment while I listen carefully."
+    - "Let me listen carefully to your reading, then I will help you with the next step."
   ciel.module.audio_unclear:
-    - "I could not hear that clearly. Please try again with your clear reading voice."
-    - "Let us try that again. Speak clearly when you are ready."
+    - "I could not hear that clearly. That is okay, so please try again with your clear reading voice."
+    - "Let us try that again together. Take your time, then speak clearly when you are ready."
   ciel.module.close_retry.initial_sound:
-    - "Almost there. Listen to the first sound and try again."
-    - "Good try. Start with the first sound clearly."
+    - "Almost there. Listen to the first sound, then try the word again slowly and clearly."
+    - "Good try. Start with the first sound clearly, then keep going through the whole word."
   ciel.module.close_retry.middle_sound:
-    - "Almost there. Listen to the middle sound and try again."
-    - "Good effort. Say the middle sound clearly this time."
+    - "Almost there. Listen to the middle sound, then say it again a little slower."
+    - "Good effort. Say the middle sound clearly this time, and take the word step by step."
   ciel.module.close_retry.final_sound:
-    - "Almost there. Say the ending sound clearly this time."
-    - "Good try. Listen to the last sound and try again."
+    - "Almost there. Say the ending sound clearly this time, then finish the whole word carefully."
+    - "Good try. Listen to the last sound, then try again when you are ready."
   ciel.module.close_retry.omission:
-    - "Almost. Try to say every part of the word."
-    - "Good try. Do not skip any part."
+    - "Almost. Try to say every part of the word, and we can go slowly together."
+    - "Good try. Do not skip any part; look closely and say each part clearly."
   ciel.module.close_retry.insertion:
-    - "Almost. Read only what you see."
-    - "Good try. Say only the word shown."
+    - "Almost. Read only what you see, and take your time with each sound."
+    - "Good try. Say only the word shown, then stop when the word is finished."
   ciel.module.close_retry.word_boundary:
-    - "Almost. Pause a little between the words."
-    - "Good try. Say each word clearly."
+    - "Almost. Pause a little between the words, then keep your voice clear and steady."
+    - "Good try. Say each word clearly, one at a time, without rushing."
   ciel.module.close_retry.generic:
-    - "Almost there. Try again slowly and clearly."
-    - "Good effort. Let us try one more time."
+    - "Almost there. Try again slowly and clearly, and I will stay with you while you read."
+    - "Good effort. Let us try one more time, taking each part step by step."
   ciel.module.success:
-    - "Good job. You read it correctly."
-    - "Nice reading. You got it."
+    - "Nice work! You said that clearly, and I can hear that you are getting more confident."
+    - "Great job! You got that one, and you read it with a nice clear voice."
   ciel.module.strong_success:
-    - "Great reading. You are getting stronger."
-    - "Great streak. Keep going."
+    - "Great reading. You are getting stronger, and your clear voice is helping you improve."
+    - "Great streak. Keep going, take your time, and keep using that clear reading voice."
   ciel.module.section_complete:
-    - "Great work. You finished this part."
-    - "Nice job. You completed this section."
+    - "Great work. You finished this part, and you stayed focused while you practiced."
+    - "Nice job. You completed this section, so let us move forward carefully together."
   ciel.module.final_complete:
-    - "Congratulations. You finished the activity."
-    - "Great job. You completed the reading task."
+    - "Congratulations. You finished the activity, and you worked carefully through each reading step."
+    - "Great job. You completed the reading task, and your effort helped you get through it."
   ciel.module.generic:
-    - "Let us keep practicing."
-    - "I am here to help you read."
+    - "Ready? Let us keep practicing together. Go slowly, and just try your best."
+    - "I am here to help you read, and we can take each word one step at a time."
   ciel.game.model_pronunciation:
-    - "Listen carefully. This is how we say it: {target_text}."
-    - "Let us listen to the sound of: {target_text}."
+    - "Listen carefully first. This is how we say it: {target_text}. Then you can try it slowly."
+    - "Let us listen to the sound of: {target_text}. Pay attention, then say it when you are ready."
   ciel.game.repeat_after_me:
-    - "Listen first, then say it after me: {target_text}."
-    - "I will say it first. Then you can try: {target_text}."
+    - "Listen first, then say it after me: {target_text}. Take your time and use your clear voice."
+    - "I will say it first. Then you can try: {target_text}. We will go slowly together."
   ciel.game.listen_and_choose:
-    - "Listen carefully and choose the matching one."
-    - "Use your listening ears and pick the correct match."
+    - "Listen carefully and choose the matching one. Take your time before you answer."
+    - "Use your listening ears and pick the correct match when you feel ready."
   ciel.game.sound_focus:
-    - "Listen to this sound: {target_sound}."
-    - "Focus on the sound: {target_sound}."
+    - "Listen to this sound: {target_sound}. Then try to keep that sound clear in your voice."
+    - "Focus on the sound: {target_sound}. We will listen first, then practice it slowly."
   ciel.game.generic_listen:
-    - "Let us listen carefully."
-    - "Listen closely before you choose."
+    - "Let us listen carefully first, then we can answer when you are ready."
+    - "Listen closely before you choose, and take your time with this one."
